@@ -16,10 +16,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var scorePrompt: UILabel!
     var randomNumber = Int(arc4random_uniform(100)) + 1
+        //generates a random number
     var UserTries = 4
+        // the number of tries the user gets
     var newGame = false
+        // starts a new game
     var wins = 0
     var loses = 0
+        //number of wins and loses
     @IBOutlet weak var colorButton: UIButton!
     
     override func viewDidLoad() {
@@ -30,14 +34,17 @@ class ViewController: UIViewController {
         enter a number between 1 and 100
         """
         promptUser.text = "\(Int(ageSlider.value))"
+        //displays slider number
         restartButton.isHidden = true
         userClicked.setTitle("Enter number", for: .normal)
         restartButton.setTitle("restart", for: .normal)
         randomcolor((Any).self)
+        //sets random color for start of game
         scorePrompt.text = """
         wins - loses
         \(wins) - \(loses)
         """
+        //displays wins and loses
         colorButton.setTitle("color", for: .normal)
     }
     
