@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     var newGame = false
     var wins = 0
     var loses = 0
+    @IBOutlet weak var colorButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +33,12 @@ class ViewController: UIViewController {
         restartButton.isHidden = true
         userClicked.setTitle("Enter number", for: .normal)
         restartButton.setTitle("restart", for: .normal)
-        self.view.backgroundColor = UIColor.darkGray
+        randomcolor((Any).self)
         scorePrompt.text = """
         wins - loses
         \(wins) - \(loses)
         """
+        colorButton.setTitle("color", for: .normal)
     }
     
     @IBAction func sliderValueChanged(_ sender: Any) {
@@ -83,7 +85,7 @@ class ViewController: UIViewController {
     @IBAction func userRestart(_ sender: Any) {
         newGame = true
         if newGame == true {
-            UserTries = 5
+            UserTries = 4
             randomNumber = Int(arc4random_uniform(100)) + 1
             userClicked.isHidden = false
             viewDidLoad()
@@ -99,5 +101,38 @@ class ViewController: UIViewController {
         wins - loses
         \(wins) - \(loses)
         """
+    }
+    
+    @IBAction func randomcolor(_ sender: Any) {
+        let pickColor = Int(arc4random_uniform(9)) + 1
+        
+        switch pickColor {
+        case 1:
+            self.view.backgroundColor = UIColor.darkGray
+            
+        case 2:
+            self.view.backgroundColor = UIColor.yellow
+            
+        case 3:
+            self.view.backgroundColor = UIColor.cyan
+            
+        case 4:
+            self.view.backgroundColor = UIColor.blue
+            
+        case 5:
+            self.view.backgroundColor = UIColor.orange
+            
+        case 6:
+            self.view.backgroundColor = UIColor.magenta
+            
+        case 7:
+            self.view.backgroundColor = UIColor.purple
+            
+        case 8:
+            self.view.backgroundColor = UIColor.gray
+            
+        default:
+            self.view.backgroundColor = UIColor.white
+        }
     }
 }

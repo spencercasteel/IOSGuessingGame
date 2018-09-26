@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -66,8 +67,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y95-HI-rdX">
-                                <rect key="frame" x="97" y="402" width="125" height="70"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y95-HI-rdX">
+                                <rect key="frame" x="125" y="265" width="136" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="WB2-s2-Wei"/>
                                     <constraint firstAttribute="width" constant="136" id="u7v-fn-djv"/>
@@ -79,18 +80,33 @@
                                     <action selector="userClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aOe-Bn-9Le"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AN6-7h-lFc">
+                                <rect key="frame" x="16" y="386" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="randomcolor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="giw-5d-THr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Y95-HI-rdX" firstAttribute="top" secondItem="8nJ-f4-xbS" secondAttribute="bottom" constant="50" id="0o7-BS-gAZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AN6-7h-lFc" secondAttribute="trailing" constant="324" id="1WM-cw-wkM"/>
                             <constraint firstItem="U4W-nD-HYH" firstAttribute="top" secondItem="qHn-lb-h0r" secondAttribute="bottom" constant="20" id="1vW-Bh-5ow"/>
                             <constraint firstItem="Y95-HI-rdX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="125" id="5vK-DF-gxp"/>
                             <constraint firstItem="8nJ-f4-xbS" firstAttribute="top" secondItem="ETg-xR-d6i" secondAttribute="bottom" id="ARK-Md-dtk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AN6-7h-lFc" secondAttribute="bottom" constant="251" id="DjY-YN-7b5"/>
                             <constraint firstItem="U4W-nD-HYH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="FQL-8t-V2d"/>
                             <constraint firstItem="ETg-xR-d6i" firstAttribute="top" secondItem="U4W-nD-HYH" secondAttribute="bottom" constant="20" id="Ljs-jf-KIo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AN6-7h-lFc" secondAttribute="trailing" constant="324" id="NO0-iG-hZe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U4W-nD-HYH" secondAttribute="trailing" constant="16" id="NgM-Y2-OXF"/>
+                            <constraint firstItem="AN6-7h-lFc" firstAttribute="top" secondItem="8nJ-f4-xbS" secondAttribute="bottom" constant="171" id="RNj-NG-NJL"/>
                             <constraint firstItem="ETg-xR-d6i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="X9C-aD-36a"/>
+                            <constraint firstItem="AN6-7h-lFc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="XiI-sd-Jft"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e34-3r-2XI" secondAttribute="trailing" constant="125" id="YqM-0l-zgE"/>
+                            <constraint firstItem="AN6-7h-lFc" firstAttribute="top" secondItem="Y95-HI-rdX" secondAttribute="bottom" constant="51" id="aDE-F3-HJS"/>
                             <constraint firstItem="qHn-lb-h0r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dkk-yH-KCh"/>
                             <constraint firstItem="8nJ-f4-xbS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="flF-RU-ZN6"/>
                             <constraint firstItem="e34-3r-2XI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="125" id="mTm-BY-V13"/>
@@ -105,6 +121,7 @@
                     </view>
                     <connections>
                         <outlet property="ageSlider" destination="8nJ-f4-xbS" id="E6E-ko-rpu"/>
+                        <outlet property="colorButton" destination="AN6-7h-lFc" id="KEQ-14-3bC"/>
                         <outlet property="promptUser" destination="ETg-xR-d6i" id="7jZ-3f-sls"/>
                         <outlet property="restartButton" destination="e34-3r-2XI" id="cUm-cK-NRW"/>
                         <outlet property="scorePrompt" destination="U4W-nD-HYH" id="vYQ-hY-Ely"/>
