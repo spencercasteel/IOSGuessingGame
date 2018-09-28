@@ -46,12 +46,13 @@ class ViewController: UIViewController {
         """
         //displays wins and loses
         colorButton.setTitle("color", for: .normal)
+        //names color button
     }
     
     @IBAction func sliderValueChanged(_ sender: Any) {
         promptUser.text = "\(Int(ageSlider.value))"
     }
-    
+    //puts the value of the slider in the label for display
     @IBAction func userClicked(_ sender: Any) {
         let userInput = Int(ageSlider.value)
         
@@ -86,7 +87,8 @@ class ViewController: UIViewController {
             """
             UserTries -= 1
         }
-        print("\(randomNumber) - \(UserTries)")
+        //thinking of the game takes the input and applies it to the generated number and desides if it is correct or not, also subtracts a trie every time it runs
+        print("\(randomNumber) - \(UserTries) - \(userInput)")
     }
     
     @IBAction func userRestart(_ sender: Any) {
@@ -98,7 +100,7 @@ class ViewController: UIViewController {
             viewDidLoad()
         }
     }
-    
+    //resets setting when game is restarted
     
     func restart() {
         userClicked.isHidden = true
@@ -109,6 +111,7 @@ class ViewController: UIViewController {
         \(wins) - \(loses)
         """
     }
+    //calls restart when game is lost or won
     
     @IBAction func randomcolor(_ sender: Any) {
         let pickColor = Int(arc4random_uniform(9)) + 1
@@ -142,4 +145,5 @@ class ViewController: UIViewController {
             self.view.backgroundColor = UIColor.white
         }
     }
+    //picks a random color for the background
 }
